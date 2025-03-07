@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\v1\Admin\AdminAdsLimitController;
 use App\Http\Controllers\Api\v1\Admin\AdminBanController;
 use App\Http\Controllers\Api\v1\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminCityController;
@@ -34,3 +35,5 @@ Route::prefix("wallets/{wallet}")->name("wallets.")->group(function () {
 Route::apiResource("wallet-transactions", AdminWalletTransactionController::class)->except(["store", "update"]);
 
 Route::apiResource("categories", AdminCategoryController::class);
+
+Route::apiResource("ads-limit", AdminAdsLimitController::class);
