@@ -12,7 +12,6 @@ use App\ModelServices\Ads\AdsFiledService;
 use App\ModelServices\Ads\AdsService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class UserAdsController extends AuthUserController
 {
@@ -92,6 +91,14 @@ class UserAdsController extends AuthUserController
     /**
      * Remove the specified resource from storage.
      */
+    public function deleteReason(Request $request, Ads $advertise): JsonResponse
+    {
+        $data = $request->validate([
+            "reason_id" => "nullable|integer|exists:delete_reasons,id",
+        ]);
+        $this->adsService->setDeleteReason($advertise, $data["reason_id"]);
+        return $this->ok($advertise);
+    }
     public function destroy(Ads $advertise): JsonResponse
     {
         $advertise->delete();

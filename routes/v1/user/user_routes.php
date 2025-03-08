@@ -20,3 +20,4 @@ Route::apiResource("advertises", UserAdsController::class);
 Route::get("advertises/{advertise}/get-fields", [UserAdsController::class, "getFields"])->name("advertises.get-fields");
 Route::post("advertises/{advertise}/save-fields", [UserAdsController::class, "saveFields"])->name("advertises.save-fields");
 Route::post("advertises/{advertise}/publish", [UserAdsController::class, "publish"])->name("advertises.publish");
+Route::post("advertises/{advertise}/delete-reason",[UserAdsController::class, "deleteReason"])->name("advertises.delete-reason");

@@ -8,9 +8,11 @@ use App\Exceptions\ModelException;
 use App\Handlers\Ads\AdsHandler;
 use App\Models\Ads;
 use App\Models\AdsLimit;
+use App\Models\DeleteReason;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\DB;
 
 class AdsService
 {
@@ -80,5 +82,16 @@ class AdsService
         }
         $ads->update([...$data, "status" => AdsStatus::Completed->value]);
         return $ads;
+    }
+
+    public function setDeleteReason(Ads $advertise, ?int $reason_id): void
+    {
+        if ($advertise->isPublished() && $reason_id) {
+            $reason = DeleteReason::find($reason_id);
+            DB::table("ads_delete_reason")->insert([
+                "reason_id" => $reason->id,
+                "ads_id" => $advertise->id
+            ]);
+        }
     }
 }
