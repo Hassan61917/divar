@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminAdsFieldController;
 use App\Http\Controllers\Api\v1\Admin\AdminAdsLimitController;
 use App\Http\Controllers\Api\v1\Admin\AdminAdsOfferController;
 use App\Http\Controllers\Api\v1\Admin\AdminAlarmOfferController;
+use App\Http\Controllers\Api\v1\Admin\AdminAuctionController;
 use App\Http\Controllers\Api\v1\Admin\AdminBanController;
 use App\Http\Controllers\Api\v1\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminCityController;
@@ -95,4 +96,6 @@ Route::apiResource("report-rules", AdminReportCategoryController::class);
 Route::apiResource("reports", AdminReportController::class)->except("update");
 
 Route::apiResource("alarm-offers", AdminAlarmOfferController::class);
+
+Route::apiResource("auctions", AdminAuctionController::class)->except("store", "update");
 

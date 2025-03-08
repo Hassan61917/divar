@@ -2,6 +2,7 @@
 
 namespace App\Models\Trait\Relations;
 
+use App\Models\Auction;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Comment;
@@ -12,6 +13,7 @@ use App\Models\User;
 use App\Models\Wishlist;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 trait AdsRelations
 {
@@ -50,5 +52,9 @@ trait AdsRelations
     public function ladderOrders(): HasMany
     {
         return $this->hasMany(LadderOrder::class);
+    }
+    public function auction(): HasOne
+    {
+        return $this->hasOne(Auction::class, "ads_id");
     }
 }

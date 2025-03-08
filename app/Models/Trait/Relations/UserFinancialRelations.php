@@ -3,6 +3,8 @@
 namespace App\Models\Trait\Relations;
 
 use App\Models\AlarmOrder;
+use App\Models\Auction;
+use App\Models\AuctionBid;
 use App\Models\Discount;
 use App\Models\LadderOrder;
 use App\Models\OfferOrder;
@@ -43,5 +45,15 @@ trait UserFinancialRelations
     public function alarmOrders(): HasMany
     {
         return $this->hasMany(AlarmOrder::class);
+    }
+
+    public function auctions(): HasMany
+    {
+        return $this->hasMany(Auction::class);
+    }
+
+    public function auctionOffers(): HasMany
+    {
+        return $this->hasMany(AuctionBid::class);
     }
 }
