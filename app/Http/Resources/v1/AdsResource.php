@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AdsResource extends AppJsonResource
 {
+    protected array $resources = [VisitCountResource::class];
     public function toArray(Request $request): array
     {
         return [

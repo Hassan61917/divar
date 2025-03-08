@@ -10,6 +10,7 @@ use App\Models\LadderOrder;
 use App\Models\Question;
 use App\Models\State;
 use App\Models\User;
+use App\Models\Visit;
 use App\Models\Wishlist;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -56,5 +57,9 @@ trait AdsRelations
     public function auction(): HasOne
     {
         return $this->hasOne(Auction::class, "ads_id");
+    }
+    public function visits(): HasMany
+    {
+        return $this->hasMany(Visit::class);
     }
 }

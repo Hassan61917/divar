@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserQuestionController;
 use App\Http\Controllers\Api\v1\User\UserReportController;
 use App\Http\Controllers\Api\v1\User\UserTicketController;
+use App\Http\Controllers\Api\v1\User\UserVisitController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
 use App\Http\Controllers\Api\v1\User\UserWishlistController;
@@ -76,3 +77,6 @@ Route::apiResource("auction-bids", UserAuctionBidController::class);
 
 Route::post("like", [UserLikeController::class, "like"])->name("like");
 Route::post("dislike", [UserLikeController::class, "dislike"])->name("dislike");
+
+Route::delete("visits/delete-all", [UserVisitController::class, "destroyAll"])->name("visits.delete-all");
+Route::apiResource("visits", UserVisitController::class)->except("update");

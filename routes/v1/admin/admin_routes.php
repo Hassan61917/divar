@@ -25,6 +25,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminStateController;
 use App\Http\Controllers\Api\v1\Admin\AdminTicketCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminTicketController;
 use App\Http\Controllers\Api\v1\Admin\AdminUserController;
+use App\Http\Controllers\Api\v1\Admin\AdminVisitController;
 use App\Http\Controllers\Api\v1\Admin\AdminWalletController;
 use App\Http\Controllers\Api\v1\Admin\AdminWalletTransactionController;
 use App\Http\Controllers\Api\v1\Admin\AdminWishlistController;
@@ -98,4 +99,7 @@ Route::apiResource("reports", AdminReportController::class)->except("update");
 Route::apiResource("alarm-offers", AdminAlarmOfferController::class);
 
 Route::apiResource("auctions", AdminAuctionController::class)->except("store", "update");
+
+Route::delete("visits/destory-trashed", [AdminVisitController::class, "destroyTrashed"])->name("visits.destory-all");
+Route::apiResource("visits", AdminVisitController::class)->except("update", "store");
 
