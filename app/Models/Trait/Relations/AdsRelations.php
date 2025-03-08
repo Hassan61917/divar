@@ -5,6 +5,7 @@ namespace App\Models\Trait\Relations;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Comment;
+use App\Models\LadderOrder;
 use App\Models\Question;
 use App\Models\State;
 use App\Models\User;
@@ -45,5 +46,9 @@ trait AdsRelations
     public function wishlist(): HasMany
     {
         return $this->hasMany(Wishlist::class);
+    }
+    public function ladderOrders(): HasMany
+    {
+        return $this->hasMany(LadderOrder::class);
     }
 }

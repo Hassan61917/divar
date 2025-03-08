@@ -3,6 +3,7 @@
 namespace App\Models\Trait\Relations;
 
 use App\Models\Discount;
+use App\Models\LadderOrder;
 use App\Models\OfferOrder;
 use App\Models\Order;
 use App\Models\Wallet;
@@ -33,5 +34,9 @@ trait UserFinancialRelations
     public function offerOrders(): HasMany
     {
         return $this->hasMany(OfferOrder::class);
+    }
+    public function ladderOrders(): HasMany
+    {
+        return $this->hasMany(LadderOrder::class);
     }
 }

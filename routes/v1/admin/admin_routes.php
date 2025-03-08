@@ -10,6 +10,8 @@ use App\Http\Controllers\Api\v1\Admin\AdminCityController;
 use App\Http\Controllers\Api\v1\Admin\AdminCommentController;
 use App\Http\Controllers\Api\v1\Admin\AdminDeleteReasonController;
 use App\Http\Controllers\Api\v1\Admin\AdminDiscountController;
+use App\Http\Controllers\Api\v1\Admin\AdminLadderController;
+use App\Http\Controllers\Api\v1\Admin\AdminLadderOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminMessageController;
 use App\Http\Controllers\Api\v1\Admin\AdminOfferOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
@@ -70,3 +72,9 @@ Route::apiResource("messages", AdminMessageController::class)->except("store");
 Route::apiResource("comments", AdminCommentController::class);
 
 Route::apiResource("wishlist", AdminWishlistController::class)->only("index", "show");
+
+Route::apiResource("ladders", AdminLadderController::class);
+Route::apiResource("ladder-orders", AdminLadderOrderController::class)->except("store");
+Route::post("ladder-orders/{ladder_order}/show", [AdminLadderOrderController::class, "show"])->name("ladder-orders.show");
+Route::post("ladder-orders/{ladder_order}/cancel", [AdminLadderOrderController::class, "cancel"])->name("ladder-orders.cancel");
+Route::post("ladder-orders/{ladder_order}/complete", [AdminLadderOrderController::class, "complete"])->name("ladder-orders.complete");

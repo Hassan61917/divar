@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\v1\User\UserAdsController;
 use App\Http\Controllers\Api\v1\User\UserBlockController;
 use App\Http\Controllers\Api\v1\User\UserCommentController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
+use App\Http\Controllers\Api\v1\User\UserLadderOrderController;
 use App\Http\Controllers\Api\v1\User\UserMessageController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
@@ -49,3 +50,6 @@ Route::apiResource("comments", UserCommentController::class);
 Route::get("my-ads-comments",[UserCommentController::class, "myAdsComments"])->name("comments.my-ads");
 
 Route::apiResource("wishlist", UserWishlistController::class)->except("update");
+
+Route::apiResource("ladder-orders", UserLadderOrderController::class);
+Route::post("ladder-orders/{ladder_order}/cancel", [UserLadderOrderController::class, "cancel"])->name("ladder-orders.cancel");
