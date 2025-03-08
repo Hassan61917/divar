@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\v1\User\UserAdsController;
+use App\Http\Controllers\Api\v1\User\UserBlockController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
+use App\Http\Controllers\Api\v1\User\UserMessageController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserQuestionController;
@@ -33,3 +35,10 @@ Route::apiResource("offer-orders",UserOfferOrderController::class)->except("upda
 
 Route::apiResource("questions", UserQuestionController::class);
 Route::post("/questions/{question}/answer", [UserQuestionController::class, "answer"])->name("questions.answer");
+
+Route::apiResource("blocks", UserBlockController::class);
+Route::apiResource("messages", UserMessageController::class)->except("index");
+Route::get("inbox", [UserMessageController::class, "inbox"])->name("inbox");
+Route::get("outbox", [UserMessageController::class, "outbox"])->name("outbox");
+Route::get("chats", [UserMessageController::class, "chats"])->name("chats");
+Route::get("chats/{user}/chat", [UserMessageController::class, "chat"])->name("chat");

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\OrderStatus;
 use App\Utils\EnumHelper;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

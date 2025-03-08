@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminCityController;
 use App\Http\Controllers\Api\v1\Admin\AdminDeleteReasonController;
 use App\Http\Controllers\Api\v1\Admin\AdminDiscountController;
+use App\Http\Controllers\Api\v1\Admin\AdminMessageController;
 use App\Http\Controllers\Api\v1\Admin\AdminOfferOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminQuestionController;
@@ -61,3 +62,5 @@ Route::apiResource("ads-offers", AdminAdsOfferController::class);
 Route::apiResource("offer-orders", AdminOfferOrderController::class)->only("index", "show");
 
 Route::apiResource("questions", AdminQuestionController::class)->except("store");
+
+Route::apiResource("messages", AdminMessageController::class)->except("store");
