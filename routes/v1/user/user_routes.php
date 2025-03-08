@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\v1\User\UserAdsController;
 use App\Http\Controllers\Api\v1\User\UserBlockController;
+use App\Http\Controllers\Api\v1\User\UserCommentController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
 use App\Http\Controllers\Api\v1\User\UserMessageController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
@@ -42,3 +43,6 @@ Route::get("inbox", [UserMessageController::class, "inbox"])->name("inbox");
 Route::get("outbox", [UserMessageController::class, "outbox"])->name("outbox");
 Route::get("chats", [UserMessageController::class, "chats"])->name("chats");
 Route::get("chats/{user}/chat", [UserMessageController::class, "chat"])->name("chat");
+
+Route::apiResource("comments", UserCommentController::class);
+Route::get("my-ads-comments",[UserCommentController::class, "myAdsComments"])->name("comments.my-ads");

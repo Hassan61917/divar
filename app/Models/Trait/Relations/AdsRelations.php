@@ -4,6 +4,7 @@ namespace App\Models\Trait\Relations;
 
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Comment;
 use App\Models\Question;
 use App\Models\State;
 use App\Models\User;
@@ -35,5 +36,9 @@ trait AdsRelations
     public function questions(): HasMany
     {
         return $this->hasMany(Question::class);
+    }
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
     }
 }

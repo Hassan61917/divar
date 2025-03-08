@@ -24,6 +24,7 @@ class AdsResource extends AppJsonResource
             "user" => $this->mergeRelation(UserResource::class, "user"),
             "category" => $this->mergeRelation(CategoryResource::class, "category"),
             "questions" => $this->mergeRelations(QuestionResource::class, "questions"),
+            "comments" => $this->mergeRelations(CommentResource::class, "comments"),
         ];
     }
 }
