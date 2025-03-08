@@ -19,6 +19,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminStateController;
 use App\Http\Controllers\Api\v1\Admin\AdminUserController;
 use App\Http\Controllers\Api\v1\Admin\AdminWalletController;
 use App\Http\Controllers\Api\v1\Admin\AdminWalletTransactionController;
+use App\Http\Controllers\Api\v1\Admin\AdminWishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::apiResource("roles", AdminRoleController::class);
@@ -67,3 +68,5 @@ Route::apiResource("questions", AdminQuestionController::class)->except("store")
 Route::apiResource("messages", AdminMessageController::class)->except("store");
 
 Route::apiResource("comments", AdminCommentController::class);
+
+Route::apiResource("wishlist", AdminWishlistController::class)->only("index", "show");

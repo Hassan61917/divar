@@ -8,6 +8,7 @@ use App\Models\Comment;
 use App\Models\Question;
 use App\Models\State;
 use App\Models\User;
+use App\Models\Wishlist;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -40,5 +41,9 @@ trait AdsRelations
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+    public function wishlist(): HasMany
+    {
+        return $this->hasMany(Wishlist::class);
     }
 }

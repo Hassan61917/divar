@@ -5,6 +5,7 @@ namespace App\Models\Trait\Relations;
 use App\Models\Comment;
 use App\Models\Message;
 use App\Models\UserBlock;
+use App\Models\Wishlist;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait UserSocialRelations
@@ -26,5 +27,9 @@ trait UserSocialRelations
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+    public function wishlist(): HasMany
+    {
+        return $this->hasMany(Wishlist::class);
     }
 }

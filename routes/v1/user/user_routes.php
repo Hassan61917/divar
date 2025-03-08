@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserQuestionController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
+use App\Http\Controllers\Api\v1\User\UserWishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::apiResource("/profile", UserProfileController::class)->except(["show", "delete"]);
@@ -46,3 +47,5 @@ Route::get("chats/{user}/chat", [UserMessageController::class, "chat"])->name("c
 
 Route::apiResource("comments", UserCommentController::class);
 Route::get("my-ads-comments",[UserCommentController::class, "myAdsComments"])->name("comments.my-ads");
+
+Route::apiResource("wishlist", UserWishlistController::class)->except("update");
