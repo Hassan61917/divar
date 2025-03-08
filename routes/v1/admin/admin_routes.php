@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminCityController;
 use App\Http\Controllers\Api\v1\Admin\AdminDeleteReasonController;
 use App\Http\Controllers\Api\v1\Admin\AdminDiscountController;
+use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminRoleController;
 use App\Http\Controllers\Api\v1\Admin\AdminStateController;
 use App\Http\Controllers\Api\v1\Admin\AdminUserController;
@@ -49,3 +50,5 @@ Route::apiResource("ads-fields", AdminAdsFieldController::class);
 Route::apiResource("delete-reasons", AdminDeleteReasonController::class);
 
 Route::apiResource("discounts", AdminDiscountController::class);
+
+Route::apiResource("orders", AdminOrderController::class)->except("store", "update");
