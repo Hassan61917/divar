@@ -13,4 +13,8 @@ class City extends AppModel
     {
         return $this->belongsTo(State::class);
     }
+    public function ads(): HasMany
+    {
+        return $this->hasMany(Ads::class);
+    }
 }

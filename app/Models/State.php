@@ -13,4 +13,8 @@ class State extends AppModel
     {
         return $this->hasMany(City::class);
     }
+    public function ads(): HasMany
+    {
+        return $this->hasMany(Ads::class);
+    }
 }

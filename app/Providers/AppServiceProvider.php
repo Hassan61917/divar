@@ -14,6 +14,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(ICodeGenerator::class, CodeGenerator::class);
+        $this->app->singleton(IFrontAdsService::class, FrontAdsService::class);
+
     }
 
     /**
