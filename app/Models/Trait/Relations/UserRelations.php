@@ -2,6 +2,7 @@
 
 namespace App\Models\Trait\Relations;
 
+use App\Models\Ads;
 use App\Models\Ban;
 use App\Models\Profile;
 use App\Models\Role;
@@ -33,5 +34,9 @@ trait UserRelations
     public function wallet(): HasOne
     {
         return $this->hasOne(Wallet::class);
+    }
+    public function ads(): HasMany
+    {
+        return $this->hasMany(Ads::class);
     }
 }

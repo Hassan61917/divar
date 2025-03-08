@@ -37,3 +37,8 @@ Route::apiResource("wallet-transactions", AdminWalletTransactionController::clas
 Route::apiResource("categories", AdminCategoryController::class);
 
 Route::apiResource("ads-limit", AdminAdsLimitController::class);
+
+Route::apiResource("advertises",AdminAdsController::class)->except("store");
+
+Route::apiResource("ads-fields", AdminAdsFieldController::class);
+

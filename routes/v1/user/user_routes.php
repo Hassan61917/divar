@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\v1\User\UserAdsController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
@@ -14,3 +15,8 @@ Route::prefix("wallet")->name("wallet.")->group(function () {
 //    Route::post("/withdraw", [UserWalletController::class, "withdraw"])->name("withdraw");
 });
 Route::apiResource("wallet-transactions", UserWalletTransactionController::class)->except("store", "destroy");
+
+Route::apiResource("advertises", UserAdsController::class);
+Route::get("advertises/{advertise}/get-fields", [UserAdsController::class, "getFields"])->name("advertises.get-fields");
+Route::post("advertises/{advertise}/save-fields", [UserAdsController::class, "saveFields"])->name("advertises.save-fields");
+Route::post("advertises/{advertise}/publish", [UserAdsController::class, "publish"])->name("advertises.publish");
