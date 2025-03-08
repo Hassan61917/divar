@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\v1\User\UserAdsController;
+use App\Http\Controllers\Api\v1\User\UserDiscountController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
@@ -21,3 +22,7 @@ Route::get("advertises/{advertise}/get-fields", [UserAdsController::class, "getF
 Route::post("advertises/{advertise}/save-fields", [UserAdsController::class, "saveFields"])->name("advertises.save-fields");
 Route::post("advertises/{advertise}/publish", [UserAdsController::class, "publish"])->name("advertises.publish");
 Route::post("advertises/{advertise}/delete-reason",[UserAdsController::class, "deleteReason"])->name("advertises.delete-reason");
+
+Route::get("used-discounts", [UserDiscountController::class, "used"])->name("discounts.used");
+Route::get("discounts", [UserDiscountController::class, "index"])->name("discounts.index");
+Route::get("discounts/{discount}", [UserDiscountController::class, "show"])->name("discounts.show");

@@ -6,6 +6,7 @@ use App\Models\Ads;
 use App\Models\AdsField;
 use App\Models\AdsLimit;
 use App\Models\Category;
+use App\Models\Discount;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -33,5 +34,9 @@ trait CategoryRelations
     public function adsFields(): HasMany
     {
         return $this->hasMany(AdsField::class);
+    }
+    public function discounts(): HasMany
+    {
+        return $this->hasMany(Discount::class);
     }
 }
