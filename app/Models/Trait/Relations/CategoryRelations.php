@@ -3,6 +3,7 @@
 namespace App\Models\Trait\Relations;
 
 use App\Models\Ads;
+use App\Models\AdsAlarm;
 use App\Models\AdsField;
 use App\Models\AdsLimit;
 use App\Models\AdsOffer;
@@ -44,5 +45,9 @@ trait CategoryRelations
     public function offers(): HasMany
     {
         return $this->hasMany(AdsOffer::class);
+    }
+    public function alarms(): HasMany
+    {
+        return $this->hasMany(AdsAlarm::class);
     }
 }

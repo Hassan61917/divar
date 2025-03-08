@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\v1\User\UserAdsAlarmController;
 use App\Http\Controllers\Api\v1\User\UserAdsController;
+use App\Http\Controllers\Api\v1\User\UserAlarmOrderController;
 use App\Http\Controllers\Api\v1\User\UserBlockController;
 use App\Http\Controllers\Api\v1\User\UserCommentController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
@@ -61,3 +63,6 @@ Route::post("tickets/{ticket}/add-message", [UserTicketController::class, "addMe
 Route::post("tickets/{ticket}/close", [UserTicketController::class, "close"])->name("tickets.close");
 
 Route::apiResource("reports", UserReportController::class)->except("update");
+
+Route::apiResource("alarm-orders", UserAlarmOrderController::class)->except("destroy","update");
+Route::apiResource("alarm-orders/{alarm_order}/ads-alarms", UserAdsAlarmController::class);
