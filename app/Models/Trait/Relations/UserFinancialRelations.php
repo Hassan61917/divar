@@ -3,6 +3,7 @@
 namespace App\Models\Trait\Relations;
 
 use App\Models\Discount;
+use App\Models\OfferOrder;
 use App\Models\Order;
 use App\Models\Wallet;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -28,5 +29,9 @@ trait UserFinancialRelations
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
+    }
+    public function offerOrders(): HasMany
+    {
+        return $this->hasMany(OfferOrder::class);
     }
 }

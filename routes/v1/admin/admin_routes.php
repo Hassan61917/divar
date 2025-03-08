@@ -3,11 +3,13 @@
 use App\Http\Controllers\Api\v1\Admin\AdminAdsController;
 use App\Http\Controllers\Api\v1\Admin\AdminAdsFieldController;
 use App\Http\Controllers\Api\v1\Admin\AdminAdsLimitController;
+use App\Http\Controllers\Api\v1\Admin\AdminAdsOfferController;
 use App\Http\Controllers\Api\v1\Admin\AdminBanController;
 use App\Http\Controllers\Api\v1\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\v1\Admin\AdminCityController;
 use App\Http\Controllers\Api\v1\Admin\AdminDeleteReasonController;
 use App\Http\Controllers\Api\v1\Admin\AdminDiscountController;
+use App\Http\Controllers\Api\v1\Admin\AdminOfferOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminRoleController;
 use App\Http\Controllers\Api\v1\Admin\AdminStateController;
@@ -52,3 +54,7 @@ Route::apiResource("delete-reasons", AdminDeleteReasonController::class);
 Route::apiResource("discounts", AdminDiscountController::class);
 
 Route::apiResource("orders", AdminOrderController::class)->except("store", "update");
+
+Route::apiResource("ads-offers", AdminAdsOfferController::class);
+
+Route::apiResource("offer-orders", AdminOfferOrderController::class)->only("index", "show");
