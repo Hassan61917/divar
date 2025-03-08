@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\v1\Admin\AdminDeleteReasonController;
 use App\Http\Controllers\Api\v1\Admin\AdminDiscountController;
 use App\Http\Controllers\Api\v1\Admin\AdminOfferOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
+use App\Http\Controllers\Api\v1\Admin\AdminQuestionController;
 use App\Http\Controllers\Api\v1\Admin\AdminRoleController;
 use App\Http\Controllers\Api\v1\Admin\AdminStateController;
 use App\Http\Controllers\Api\v1\Admin\AdminUserController;
@@ -58,3 +59,5 @@ Route::apiResource("orders", AdminOrderController::class)->except("store", "upda
 Route::apiResource("ads-offers", AdminAdsOfferController::class);
 
 Route::apiResource("offer-orders", AdminOfferOrderController::class)->only("index", "show");
+
+Route::apiResource("questions", AdminQuestionController::class)->except("store");

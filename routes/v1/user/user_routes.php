@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\v1\User\UserAdsController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
+use App\Http\Controllers\Api\v1\User\UserQuestionController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,6 @@ Route::get("discounts", [UserDiscountController::class, "index"])->name("discoun
 Route::get("discounts/{discount}", [UserDiscountController::class, "show"])->name("discounts.show");
 
 Route::apiResource("offer-orders",UserOfferOrderController::class)->except("update", "destroy");
+
+Route::apiResource("questions", UserQuestionController::class);
+Route::post("/questions/{question}/answer", [UserQuestionController::class, "answer"])->name("questions.answer");

@@ -5,6 +5,7 @@ namespace App\Models\Trait\Relations;
 use App\Models\Ads;
 use App\Models\Ban;
 use App\Models\Profile;
+use App\Models\Question;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,5 +34,9 @@ trait UserRelations
     public function ads(): HasMany
     {
         return $this->hasMany(Ads::class);
+    }
+    public function questions(): HasMany
+    {
+        return $this->hasMany(Question::class);
     }
 }

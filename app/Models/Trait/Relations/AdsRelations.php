@@ -4,9 +4,11 @@ namespace App\Models\Trait\Relations;
 
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Question;
 use App\Models\State;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait AdsRelations
 {
@@ -29,5 +31,9 @@ trait AdsRelations
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
+    }
+    public function questions(): HasMany
+    {
+        return $this->hasMany(Question::class);
     }
 }
