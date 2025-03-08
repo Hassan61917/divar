@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\User\UserMessageController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
 use App\Http\Controllers\Api\v1\User\UserQuestionController;
+use App\Http\Controllers\Api\v1\User\UserReportController;
 use App\Http\Controllers\Api\v1\User\UserTicketController;
 use App\Http\Controllers\Api\v1\User\UserWalletController;
 use App\Http\Controllers\Api\v1\User\UserWalletTransactionController;
@@ -58,3 +59,5 @@ Route::post("ladder-orders/{ladder_order}/cancel", [UserLadderOrderController::c
 Route::apiResource("tickets", UserTicketController::class);
 Route::post("tickets/{ticket}/add-message", [UserTicketController::class, "addMessage"])->name("tickets.add-message");
 Route::post("tickets/{ticket}/close", [UserTicketController::class, "close"])->name("tickets.close");
+
+Route::apiResource("reports", UserReportController::class)->except("update");

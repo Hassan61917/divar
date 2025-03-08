@@ -16,6 +16,8 @@ use App\Http\Controllers\Api\v1\Admin\AdminMessageController;
 use App\Http\Controllers\Api\v1\Admin\AdminOfferOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminOrderController;
 use App\Http\Controllers\Api\v1\Admin\AdminQuestionController;
+use App\Http\Controllers\Api\v1\Admin\AdminReportCategoryController;
+use App\Http\Controllers\Api\v1\Admin\AdminReportController;
 use App\Http\Controllers\Api\v1\Admin\AdminRoleController;
 use App\Http\Controllers\Api\v1\Admin\AdminStateController;
 use App\Http\Controllers\Api\v1\Admin\AdminTicketCategoryController;
@@ -86,3 +88,7 @@ Route::apiResource("tickets", AdminTicketController::class);
 Route::get("tickets/closed", [AdminTicketController::class, "closed"])->name("tickets.closed");
 Route::post("tickets/{ticket}/answer", [AdminTicketController::class, "answer"])->name("tickets.answer");
 Route::post("tickets/{ticket}/close", [AdminTicketController::class, "close"])->name("tickets.close");
+
+Route::apiResource("report-categories", AdminReportCategoryController::class);
+Route::apiResource("report-rules", AdminReportCategoryController::class);
+Route::apiResource("reports", AdminReportController::class)->except("update");

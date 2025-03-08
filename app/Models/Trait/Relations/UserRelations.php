@@ -6,6 +6,7 @@ use App\Models\Ads;
 use App\Models\Ban;
 use App\Models\Profile;
 use App\Models\Question;
+use App\Models\Report;
 use App\Models\Role;
 use App\Models\Ticket;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -44,5 +45,9 @@ trait UserRelations
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+    public function reports(): HasMany
+    {
+        return $this->hasMany(Report::class);
     }
 }
