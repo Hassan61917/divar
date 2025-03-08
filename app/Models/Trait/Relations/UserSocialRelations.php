@@ -3,6 +3,7 @@
 namespace App\Models\Trait\Relations;
 
 use App\Models\Comment;
+use App\Models\Like;
 use App\Models\Message;
 use App\Models\UserBlock;
 use App\Models\Wishlist;
@@ -31,5 +32,9 @@ trait UserSocialRelations
     public function wishlist(): HasMany
     {
         return $this->hasMany(Wishlist::class);
+    }
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
     }
 }

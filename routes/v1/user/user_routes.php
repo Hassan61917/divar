@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\User\UserBlockController;
 use App\Http\Controllers\Api\v1\User\UserCommentController;
 use App\Http\Controllers\Api\v1\User\UserDiscountController;
 use App\Http\Controllers\Api\v1\User\UserLadderOrderController;
+use App\Http\Controllers\Api\v1\User\UserLikeController;
 use App\Http\Controllers\Api\v1\User\UserMessageController;
 use App\Http\Controllers\Api\v1\User\UserOfferOrderController;
 use App\Http\Controllers\Api\v1\User\UserProfileController;
@@ -72,3 +73,6 @@ Route::apiResource("alarm-orders/{alarm_order}/ads-alarms", UserAdsAlarmControll
 Route::apiResource("auctions", UserAuctionController::class);
 
 Route::apiResource("auction-bids", UserAuctionBidController::class);
+
+Route::post("like", [UserLikeController::class, "like"])->name("like");
+Route::post("dislike", [UserLikeController::class, "dislike"])->name("dislike");

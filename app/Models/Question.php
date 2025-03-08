@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Interfaces\Likeable;
+use App\Models\Trait\With\WithLike;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Question extends AppModel
+class Question extends AppModel implements Likeable
 {
+    use WithLike;
     protected $fillable = [
         "ads_id", "question", "answer"
     ];
