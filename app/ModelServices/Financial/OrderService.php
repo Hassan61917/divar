@@ -17,9 +17,7 @@ class OrderService
     public function __construct(
         private WalletService   $walletService,
         private DiscountHandler $discountHandler
-    )
-    {
-    }
+    ) {}
 
     public function getOrdersFor(User $user, array $relations = []): HasMany
     {
@@ -43,7 +41,7 @@ class OrderService
     public function pay(Order $order): Order
     {
         $amount = $order->getAmount();
-        $this->walletService->withdraw($order->user, $amount);
+        $this->walletService->withdraw($order->user->wallet, $amount);
         $this->updateStatus($order, OrderStatus::Paid);
         OrderWasPaid::dispatch($order);
         return $order;
@@ -65,6 +63,7 @@ class OrderService
     {
         $discount = $this->findDiscount($code);
         $this->discountHandler->handle($discount, [$order]);
+        $discount->users()->save($order->user);
         $order->update([
             "discount_code" => $code,
             "discount_price" => $order->total_price - $discount->getValue($order->total_price)

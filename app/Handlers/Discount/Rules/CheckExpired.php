@@ -21,6 +21,6 @@ class CheckExpired implements IModelHandler
 
     private function canApply(Order $order, Discount $discount): bool
     {
-        return !$discount->expire_at || Carbon::make($discount->expire_at)->gt(now());
+        return !$discount->expired_at || Carbon::make($discount->expired_at)->gt(now());
     }
 }

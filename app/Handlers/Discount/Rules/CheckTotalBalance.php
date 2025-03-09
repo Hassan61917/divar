@@ -19,7 +19,7 @@ class CheckTotalBalance implements IModelHandler
     }
     public function canApply(Order $order, Discount $discount): bool
     {
-        return !$discount->total_balance || $discount->total_balance >= $order->total_price;
+        return !$discount->total_balance || $order->total_price > $discount->total_balance;
     }
 
 

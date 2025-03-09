@@ -19,8 +19,8 @@ class CheckLimit implements IModelHandler
     }
     public function canApply(Order $order, Discount $discount): bool
     {
-        $count = $discount->users()->where("id", auth()->id())->count();
-        return $count > $discount->limit;
+        $count = $discount->users()->where("user_id", auth()->id())->count();
+        return $count < $discount->limit;
     }
 
 }
