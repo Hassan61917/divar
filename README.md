@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+سایت مشابه دیوار 
+ویژگی ها:
+بخش نقش ها (مقام ها) :
+برنامه میتوان نقش های متفاوت داشته باشد که با مدلور hasRole کنترل میشود فقط ادمین میتواند نقش ایجاد کند یا نقش های ارتقا دهد 
+بخش مسدود کردن کاربران (Ban):
+کاربران متخلف برای مدتی خاص میتواند مسدود شوند که در این مدت نمیتواند فعالیت داشته باشند 
+نکته1: مدلور notban مسدود بودن کاربران را چک میکند 
+نکته2:هر دفعه که کاربری مسدود میشود به طور خودکار مدت مسدودی 2 بار میشود که البنه دلخواه است 
+بخش لوکیشن:
+شامل استان و شهر میشود که در بخش فرانت فقط اگهی ها همان شهر را نمایش میدهد یوزر در پروفایل میتواند لوکینش را تغییر دهد
+بخش یوزر پروفایل:
+شامل نام شماره عکس و لوکیشن 
+بخش کیف پول:
+تمام عملیات های مالی در برنامه با کبف پول انجام میشود
+عملیات های کیف پول دارای یه تراکنش میباشند که شامل مبلغ کد منحر به فرد موجودی قبل و بعد و ...و توضیحات اختیاری میباشد
+بعد از انجام تراکنش نوتیفییکش برای یوزر ارسال میشود
+نکته 1:کیف پول میتوناد مسدود شود که در این صورت عملیات برداشت یا انتقال انجام پذیر نیست
+نکته2:کیف پول شامل فیلد پسورد است که برای برداشت پول لازم است
+بخش دسته بندی:
+دسته بندی های سایت را مشخص میکند که میتوانند زیر گروه نیز داشته باشند
+مثلا دسته بندی کالای دیجتال -> گوشی موبایل
+بخش محدودیت اگهی :
+این بخش برای دسته های بندی های پدر محدودت ارسال رایگان اگهی در مدت خاص مثلا1 سال تعیین میکند 
+مثال دسته بندی کالای دیجیتال 10 اگهی برای 1 سال 
+مثال دسته بندی کسب کار 1 اگهی برای 1 ماه
+بخش اگهی :
+یوزر میتواند اگهی ارسال کند اگهی ارسالی به صورت پیش نویس ذخیره میشوند و اگر شرایط مثلا دسته بندی رایگان باشد ارسال میشود در غیر این صورت یوزر میتواند یعد از فراهم کردن شرایط اگهی را ارسال کند
+نکته 1:مشخصات منحصر به فرد هر دسته بندی در مدل ads field دخیره میشود و زمانی که کامل شود وضعیت اگهی به کامل شده تغییر میکند.
+مثال: دسته بندی دیجتال فیلد برند دسته بندی تلفن همراه رم
+با ارسال درخواست get میتوانیم تمام قیلد منصر دسته بندی و دسته بندی های پدر نمایش داده میششود
+با ارسال درخواست post میتوانیم تمام قیلد منصر دسته بندی را ذخیره کنیم
+نکته 2:کاربر نمیتواند اگهی تکراری داشته باشد
+بخش بسته های ارسال اگهی:
+اگر محدودیت ارسال رایگان اگهی کاربر به پایان برسد میتوناد با خرید دوباره اگهی ارسال کند
+مثال: بسته 1 دسته بندی کسب کار تعداد2 اگهی برای 1 ماه قیمت 200
+نکته:تمام دسته بندی بسته فقط شامل دسته بندی ها گدر میشود
+نکته:تمام اگهی دسته بندی فرزند شامل بسته میشود
+مثال بسته 2 دسته بندی دیجیتال تعداد2 اگهی برای 1 ماه قیمت 200
+کاربر میتواند 1 اگهی در دسته بندی کنسول و تلفن همراه ارسال یا بقیه فرزندان دسته بندی کالای دیجیتال ارسال کند
+بخش تخفیف :
+کد تخفیف که میواند شامل برای یه یوزر خاص با همه ساخته شود 
+نکته:تختفیف میتواند شامل زمان شود مثلا 3 روز 
+نکته:تختفیف میاند مشروط باشد مثلا سفارش بالای 1000 
+نکته:میتواند شامل درصد شود و محدودیت داشته باشد مثلا تا 10 درصد تختفیف تا سقف 50
+بخش سوالات:
+هر اگهی میتواند سوالات داشته باشد که فقط صاحب اگهی مییتواند جواب دهد
+بخش پیام ها:
+کاربر میتواند پیام ارسال کند اگر مخاطب کاربر را مسدود نکرده باشد 
+فیلد seen_at بعد از دیده شدن پیام از طرف مخاصب مقدار دهی میشود
+بخش نظرات:
+هر اگهی میتواند نظرات داشته باشد کاربران میتوانند وصاحب اگهی پاسخ برای نظر ارسال کنند 
+بخش wishlist:
+کاربر میتواند اگهی های مورد علاق خودش را ذخیره کند
+بخش نربان:
+کاربران میتوانند با خرید بسته های نردبان اگهی های خودشان در ابتدای لیست اگهی ها مشاهد کنند 
+نکته:فقط 5 اگهی نمایش داده میشود و بقیه اگهی های نردبان به صف منتقل میشوند و بعد از اتمام نمایش اگهی قبلی نمایش داده میشوند
+بخش تیکت:
+کاربران میتاوند تیکت ارسال کنند و بعد از بستن تیکت به پشتبان امتیاز دهند
+بخش گزارش :
+کاربران میتواندد اگهی یوزر کامن را گزارش کنند 
+نکته:مدل report rule مشخص میکند که اگر ما تعدادی اگی در طول مدت مشخصی مثلا 1 روز دریافت کنیم یوزر را مسدود کنیم 
+بخش اطلاع از اگهی های خاص:
+کاربران میاوند با خرید بسته از اگهی خاص مثلا کم تر از قیمت مشخص اطلاع یابند مثلا با پیامک
+بخش لایک:
+کاربران میتواندد سوال یا نطرات را لایک کنند
+بخش تیکت:
