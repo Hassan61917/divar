@@ -1,6 +1,5 @@
 <h1>بک اند rest api سایت مشابه دیوار به همراه تست </h1>
-<a href="http://localhost:8000/docs/api">api documentation</a>
-سایت مشابه دیوار 
+<h2>http://localhost:8000/docs/api</h2>
 <br>
 ویژگی ها:
 <br>
